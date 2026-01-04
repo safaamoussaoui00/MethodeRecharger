@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Recharge</title>
+  <link rel="stylesheet" href="/src/css/recharger.css">
+</head>
+<body>
+<div class="recharge-form">
+  <h2>Recharger votre compte</h2>
+  
+  <label for="cardType">Choisir le type de carte :</label>
+  <select id="cardType">
+    <option value="Paypal">Paypal</option>
+    <option value="Bancaire">Carte bancaire</option>
+    <option value="Crypto">Crypto-monnaie</option>
+  </select>
+
+  <label for="amount">Montant à recharger :</label>
+  <input type="number" id="amount" placeholder="Entrer le montant">
+
+  <button id="rechargerBtn">Recharger</button>
+</div>
+
+<script>
+  const user = JSON.parse(sessionStorage.getItem("currentUser"));
+  document.getElementById("balance").textContent =
+    user.balance + " DH";
+</script>
+
+<script type="module" src="../controller/recharger.js"></script>
+
+</body>
+</html>
